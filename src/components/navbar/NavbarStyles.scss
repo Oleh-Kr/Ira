@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700&display=swap');
+
+:root {
+    --dark-g: #04622B;
+    --lighr-g: #78A47A;
+    --cream: #ECE6C8;
+    --caramel: #AD9983;
+    --dark-b: #6D4C3D;
+}
+
+body {
+    background: var(--cream);
+    margin: 0;
+    font-family: 'Poppings';
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--caramel);
+    padding: 20px 80px;
+    box-shadow: 0 5px 15px var(--dark-b);
+}
+
+#navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar li {
+    list-style: none;
+    padding: 0 20px;
+    position: relative;
+}
+
+#navbar li a {
+    text-decoration: none;
+    font-size: 1.3rem;
+    color: var(--cream);
+    transition: 0.4s ease-in-out;
+}
+
+#navbar li a:hover,
+#navbar li a.active {
+    font-weight: bold;
+    color: var(--dark-g);
+}
+
+#navbar li a:hover::after,
+#navbar li a.active::after {
+    content: "";
+    width: 30%;
+    height: 2px;
+    background: var(--dark-g);
+    position: absolute;
+    bottom: -4px;
+    left: 20px;
+}
+
+#mobile {
+    display: none;
+}
+
+#mobile i {
+    color: var(--cream);
+}
+
+@media screen and (max-width:720px) {
+    #navbar {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        position: fixed;
+        top: 110px;
+        right: -150px;
+        width: 150px;
+        height: 100vh;
+        background: var(--dark-g);
+        box-shadow: 0 40px 60px var(--lighr-g);
+        padding: 40px 0 0 10px;
+    }
+
+    #navbar.active {
+        right: 0px;
+    }
+
+    #navbar li {
+        margin-bottom: 25px;
+    }
+
+    #mobile {
+        display: block;
+    }
+
+    #mobile i {
+        font-size: 24px;
+        cursor: pointer;
+    }
+
+    #navbar li a:hover,
+    #navbar li a.active {
+        font-weight: bold;
+        color: var(--cream);
+    }
+
+    #navbar li a:hover::after,
+    #navbar li a.active::after {
+        content: "";
+        width: 30%;
+        height: 2px;
+        background: var(--cream);
+        position: absolute;
+        bottom: -4px;
+        left: 20px;
+    }
+}

@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700&display=swap');
+
+:root {
+    --dark-g: #04622B;
+    --lighr-g: #78A47A;
+    --cream: #ECE6C8;
+    --caramel: #AD9983;
+    --dark-b: #6D4C3D;
+}
+
+body {
+    display: flex;
+    background: var(--cream);
+    margin: 0;
+    font-family: 'Poppings';
+}
+
+.catalogSection {
+    background: var(--cream);
+    color: var(--dark-b);
+    padding: 5em 2em;
+    list-style-type: none;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 3vw;
+
+}
+
+.catalogLi {
+    background: var(--cream);
+    text-align: center;
+    padding: 2em 1em;
+    border-radius: 2em;
+
+    & > *{
+        pointer-events: none;
+    }
+    img {
+        width: 15em;
+        height: 15em;
+        border: 2px solid var(--caramel);
+        border-radius: 2em;
+        margin-top: -1em;
+    }
+
+    p {
+        color: var(--dark-b);
+        font-size: 1em;
+        line-height: 1.2em;
+        margin-top: 0.2em;
+    }
+}
+
+@media only screen and (min-width: 720px) {
+    .catalogLi {
+        img {
+            width: 25em;
+            height: 25em;
+            border: 4px solid var(--caramel);
+        }
+
+        p {
+            font-size: 2em;
+        }
+
+    }
+}
+
+@media only screen and (min-width: 980px) {
+.catalogSection{
+    margin: 0 auto;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+.catalogLi {
+    img {
+        width: 15em;
+        height: 15em;
+        border: 2px solid var(--caramel);
+
+    }
+    p {
+        font-size: 1em;
+    }
+}
+}

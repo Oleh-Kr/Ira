@@ -1,0 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700&display=swap');
+
+:root {
+    --dark-g: #04622B;
+    --lighr-g: #78A47A;
+    --cream: #ECE6C8;
+    --caramel: #AD9983;
+    --dark-b: #6D4C3D;
+}
+
+body {
+    background: var(--cream);
+    margin: 0;
+    font-family: 'Poppings';
+}
+
+.order {
+    background: var(--cream);
+    padding: 5em 2em
+}
+
+.orderName {
+    color: var(--dark-b);
+}
+
+label {
+    display: block;
+    font-size: 1.4em;
+    margin-bottom: 0.5em;
+    color: var(--dark-b);
+}
+
+.orderLogo {
+    display: none;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border-radius: 0.3em;
+    border: 1px solid var(--caramel);
+    box-sizing: border-box;
+}
+
+.orderButton {
+    background-color: var(--dark-g);
+    color: var(--cream);
+    font-weight: bold;
+    font-size: 1.3em;
+    border: 1px solid var(--caramel);
+    margin-bottom: 5em;
+    border-radius: 8em;
+    display: inline-block;
+    padding: 0.8em 2em;
+    cursor: pointer;
+}
+input[type="submit"] {
+    background-color: var(--dark-g);
+    color: var(--cream);
+    font-weight: bold;
+    font-size: 1.3em;
+    border: 1px solid var(--caramel);
+    margin-bottom: 5em;
+    border-radius: 8em;
+    display: inline-block;
+    padding: 0.8em 2em;
+    cursor: pointer;
+}
+@media only screen and (min-width: 720px) {
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 0.8em;
+        margin-bottom: 1em;
+        border-radius: 0.3em;
+        border: 1px solid var(--caramel);
+        box-sizing: border-box;
+    }
+
+}
+
+@media only screen and (min-width: 1080px) {
+    .order {
+        background: var(--cream);
+        color: var(--dark-b);
+        padding: 10em 4em;
+        color: var(--dark-b);
+
+    }
+
+    .containerOrder {
+        margin: 0 auto;
+    }
+
+    .orderRight {
+        position: relative;
+        right: 0em;
+        top: -2em;
+        width: 45%;
+        height: 100%;
+    }
+
+    input,
+    textarea {
+        width: 80%;
+    }
+
+    .orderLogo {
+        display: block;
+        width: 40%;
+        position: absolute;
+        right: 3em;
+        top: 16em;
+    }
+
+    // .orderButton {
+    //     background-color: var(--dark-g);
+    //     color: var(--cream);
+    //     font-weight: bold;
+    //     font-size: 1.3em;
+    //     border: 1px solid var(--caramel);
+    //     margin-bottom: 5em;
+    //     border-radius: 8em;
+    //     display: inline-block;
+    //     padding: 0.8em 2em;
+    //     cursor: pointer;
+    // }
+}

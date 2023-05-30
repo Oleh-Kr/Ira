@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700&display=swap');
+
+:root {
+    --dark-g: #04622B;
+    --lighr-g: #78A47A;
+    --cream: #ECE6C8;
+    --caramel: #AD9983;
+    --dark-b: #6D4C3D;
+}
+
+
+body {
+    background: var(--cream);
+    display: block;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    font-family: 'Poppings';
+}
+
+.contactSection {
+    display: flex;
+    background: var(--dark-b);
+    color: var(--cream);
+    padding: 5em 2em;
+}
+
+form {
+    display: flex;
+    margin-top: 0em;
+    flex-direction: column;
+}
+
+.contactLeft {
+    display: flex;
+    flex-direction: column;
+
+    h2 {
+        text-decoration: none;
+        font-weight: bold;
+        color: var(--cream);
+        font-size: 2em;
+    }
+}
+
+.contactH2 {
+    font-size: 2em;
+}
+
+.contactLabel {
+    display: block;
+    font-size: 1.4em;
+    margin-bottom: .5em;
+    color: var(--cream);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.8em;
+    margin-bottom: 1em;
+    border-radius: 0.3em;
+    border: 1px solid var(--caramel);
+    box-sizing: border-box;
+}
+
+input[type="submit"] {
+    background-color: var(--cream);
+    color: var(--dark-b);
+    font-weight: bold;
+    font-size: 1.3em;
+    border: 1px solid var(--caramel);
+    margin-bottom: 5em;
+    border-radius: 5em;
+    display: inline-block;
+    padding: .8em 2em;
+    cursor: pointer;
+}
+
+.smallMap {
+    display: flex;
+    margin: auto;
+    height: 400px;
+    width: 100%;
+    position: relative;
+    top: -4em;
+}
+
+.bigMap {
+    display: none;
+}
+
+@media only screen and (min-width: 600px) {
+    .bigMap {
+        display: flex;
+        margin: auto;
+        height: 555px;
+        width: 100%;
+        position: relative;
+        top: -1.5em;
+        right: -1em;    }
+
+    .smallMap {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 980px) {
+    .contactSection {
+        display: flex;
+        position: relative;
+        padding: 10em 4em;
+    }
+    // input[type="submit"] {
+    //     background-color: var(--cream);
+    //     color: var(--dark-b);
+    //     font-weight: bold;
+    //     font-size: 1.3em;
+    //     border: 1px solid var(--caramel);
+    //     margin-bottom: 5em;
+    //     border-radius: 5em;
+    //     display: inline-block;
+    //     padding: 0.8em 2em;
+    //     cursor: pointer;
+    // }
+
+    // .contactRight {
+    //     position: absolute;
+    //     right: 0;
+    //     top: 0px;
+    //     width: 58%;
+    //     height: 100%;
+
+    //     .bigMap {
+    //         top: 0em;
+    //         height: 100%;
+    //     }
+    // }
+
+    .bigMap {
+        position: relative;
+        display: flex;
+        top: 0em;
+        left: 3em;
+    }
+
+    .contactLeft {
+        form {
+            display: block;
+            margin-top: 0em;
+        }
+
+        label {
+            display: block;
+            font-size: 1.4em;
+            margin-bottom: 0.5em;
+        }
+
+        input {
+            width: 100%;
+            padding: 0.8em 7em;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 0.8em;
+            margin-bottom: 1em;
+            border-radius: 0.3em;
+            border: 1px solid var(--caramel);
+            box-sizing: border-box;
+            margin-left: 0.3em;
+            left: -0.3em;
+        }
+    }
+
+}

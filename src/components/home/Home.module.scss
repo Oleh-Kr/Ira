@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700&display=swap');
+
+:root {
+    --dark-g: #04622B;
+    --lighr-g: #78A47A;
+    --cream: #ECE6C8;
+    --caramel: #AD9983;
+    --dark-b: #6D4C3D;
+}
+
+body {
+    background: var(--cream);
+    margin: 0;
+    font-family: 'Poppings';
+    top: 72px;
+}
+
+.heroImg {
+    width: 70%;
+    margin-top: 2em;
+}
+
+.heroSection {
+    text-align: center;
+    color: var(--dark-b);
+    font-size: bold;
+    padding: 5em 2em;
+}
+
+.subhead {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--dark-b);
+    letter-spacing: 0.3em;
+}
+
+.heroH1{
+        font-size: 2.5em;
+    line-height: 1.3em;
+    margin-top: 0.2em;
+}
+
+.heroUl {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.heroLi
+{
+    display: list-item;
+    text-align: -webkit-match-parent;
+}
+
+.order
+{
+    background: var(--dark-g);
+    color: var(--cream);
+    text-decoration: none;
+    padding: 0.6em 1.3em;
+    font-size: 1.4em;
+    border-radius: 5em;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.instagram{
+    margin: 0em;
+    color: var(--dark-b);
+    text-decoration: none;
+    padding: 0.6em 1.3em;
+    font-size: 1.4em;
+    font-weight: bold;
+    display: inline-block;
+}
+
+/////////////////TESTIMONIAL/////////////////
+.testimonialsSection{
+    background: var(--cream);
+    color: var(--dark-b);
+    padding: 5em 2em;
+}
+
+.factUl{
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+}
+
+.factLi{
+    background: var(--dark-b);
+    text-align: center;
+    padding: 2em 1em;
+    width: 80%;
+    margin: 0 auto 5em auto;
+    border-radius: 2em;
+}
+
+.factImg{
+    width: 10em;
+    height: 10em;
+    border: 2px solid var(--caramel);
+    border-radius: 2em;
+    margin-top: -1em;
+}
+
+.factP{
+    color: var(--cream);
+    font-size: 1em;
+    line-height: 1.2em;
+    margin-top: 0.2em;
+}
+
+@media only screen and (min-width: 1080px) {
+.heroSection{
+    padding: 10em 4em;
+}
+
+.heroContainer{
+    display: flex;
+    justify-content: space-between;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.leftCol{
+        margin: 3em 3em 0 2em;
+}
+
+.subhead{
+    display: flex;
+    color: var(--dark-b);
+    font-size: 1.2em;
+    margin-left: 3em;
+    margin-right: 4em;
+}
+
+.heroH1{
+        font-size: 3em;
+}
+
+.heroImg{
+    width: 35%;
+    margin-right: -49.5em;
+    margin-top: -16em;
+}
+
+.testimonialsSection{
+    padding: 10em 4em;
+    margin: 0 auto;
+}
+
+.factUl{
+    display: flex;
+}
+
+.factLi{
+    margin: 0 1em;
+}
+
+
+}

@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700&display=swap');
+
+:root {
+    --dark-g: #04622B;
+    --lighr-g: #78A47A;
+    --cream: #ECE6C8;
+    --caramel: #AD9983;
+    --dark-b: #6D4C3D;
+}
+
+body {
+    display: block;
+    background: var(--cream);
+    margin: 0;
+    font-family: 'Poppings';
+}
+
+.heroSection {
+    display: block;
+    padding: 5em 2em;
+    text-align: center;
+    background-color: var();
+    color: var(--dark-b);
+}
+
+.subhead {
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--dark-b);
+    letter-spacing: 0.3em;
+    text-align: center;
+    text-decoration: underline;
+    padding: 0.3em;
+}
+
+.heroImg {
+    margin-top: 3em;
+    width: 70%;
+}
+
+.productName {
+    background: var(--lighr-g);
+    color: var(--cream);
+    text-decoration: none;
+    padding: 0.6em 1.3em;
+    font-size: 1.6em;
+    border-radius: 1em;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.productTextBig {
+    display: none;
+}
+
+.productTextSmall {
+    display: -webkit-box;
+    -webkit-line-clamp: 8;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-align: center;
+}
+
+.heroImg {
+    margin-top: 3em;
+    width: 90%;
+}
+
+/////////////FEATURES/////////////////
+
+.featuresSection {
+    background: var(--cream);
+    color: var(--dark-b);
+    padding: 5em 2em;
+}
+
+.featuresList {
+    margin: 0;
+    padding: .1em;
+
+    li {
+        font-size: 1.1em;
+        margin-bottom: 1em;
+        margin-left: 2em;
+        position: relative;
+        list-style: none;
+
+        &::before {
+            content: '';
+            left: -2em;
+            position: absolute;
+            width: 30px;
+            height: 30px;
+            background-image: url('./nullet.svg');
+            background-size: contain;
+            margin-right: .5em;
+        }
+    }
+}
+
+.logoImg {
+    display: none;
+}
+
+@media only screen and (min-width: 600px) {
+    .productTextSmall {
+        width: 78%;
+        padding-left: 5.5em;
+    }
+
+    .heroImg {
+        // display: flex;
+        width: 58%;
+        margin-top: 0em;
+        border-radius: 2em;
+    }
+
+    .featuresList {
+        width: 30%;
+
+    }
+}
+
+@media only screen and (min-width: 720px) {
+
+    .logoImg {
+        display: flex;
+        width: 47%;
+        position: relative;
+        right: -21em;
+        top: -19em;
+    }
+}
+
+@media only screen and (min-width: 900px) {
+
+    .productTextSmall {
+        display: none;
+    }
+
+    .logoImg {
+        top: -22em;
+    }
+
+    .productTextBig {
+        color: var(--dark-b);
+        font-size: 1.2em;
+        margin-left: 3em;
+        margin-right: 4em;
+        display: -webkit-box;
+        -webkit-line-clamp: 8;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-align: center;
+    }
+
+    .featuresSection {
+        padding: 10em 4em;
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        // width: 1080px;
+        margin: 0 auto;
+
+    }
+
+    .productContainer {
+        width: 1080px;
+        margin: 0 auto;
+    }
+
+    .featuresList {
+        display: block;
+        margin-left: 5em;
+    }
+
+    .featuresList li {
+        font-size: 1.4em;
+
+        li:before {
+            width: 25px;
+            height: 25px;
+        }
+    }
+}
+
+@media only screen and (min-width: 1080px) {
+
+
+    .heroSection {
+        padding: 10em 4em;
+        display: flex;
+        justify-content: space-between;
+        text-align: left;
+        margin: 0 auto;
+    }
+
+    .leftCol {
+        margin: 3em 3em 0 2em;
+    }
+
+    .productTextBig {
+        color: var(--dark-b);
+        font-size: 1.2em;
+        margin-left: 3em;
+        margin-right: 4em;
+    }
+
+    .heroImg {
+        width: 35%;
+        margin-right: -0.5em;
+        margin-top: 2em;
+    }
+
+    // .heroCta {
+    //     margin-left: 3em;
+    //     margin-right: 4em;
+    // }
+
+    .productName {
+        margin-left: 3em;
+        margin-right: 4em;
+    }
+
+    .heroP {
+        width: 89%;
+    }
+
+    .logoImg {
+        
+            display: block;
+            position: absolute;
+            right: 5em;
+            width: 500px;
+            bottom: 7em;
+            top: 59em;
+        
+    }
+
+
+}
