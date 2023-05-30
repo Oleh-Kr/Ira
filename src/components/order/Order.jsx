@@ -11,11 +11,11 @@ export default function Order() {
                         <label htmlFor="product">Product</label>
                         <input type="text" id="product" name="product" />
 
-                        <label htmlFor="thing">Amount</label>
+                        <label htmlFor="number">Amount</label>
                         <input type="number" id="number" name="number" />
 
                         <label htmlFor="contact">Contact</label>
-                        <input type="number" id="number" name="number" />
+                        <input type="number" id="contact" name="number" />
 
                         <label htmlFor="name-order">Your name</label>
                         <input type="text" id="name-order" name="name-order" />
