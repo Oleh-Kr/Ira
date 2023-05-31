@@ -1,71 +1,82 @@
 import React from "react";
-import { render, waitFor, screen } from "@testing-library/react";
+import { act, create } from "react-test-renderer";
 import axios from "axios";
-import MockAdapter from "axios-mock-adapter";
 import Product from "./Product";
-const baseURL = "https://api.spoonacular.com/recipes/<id>/information?apiKey=60c1ca27b27b4afbb847decdc9d34f04";
+import { MemoryRouter } from "react-router-dom";
 
+jest.mock("axios");
 
-export default function Product() {
-  const [post, setPost] = React.useState(null);
-  const [post1, setPost1] = React.useState(null);
-
-React.useEffect(() => {
-  const receipt_id = localStorage.getItem("card-id");
-
-  axios.get(baseURL.replace("<id>", receipt_id)).then((response) => {
-    var pattern = "</b>",
-    re = new RegExp(pattern, "g");
-    response.data.summary = response.data.summary.replace(/<b>/g, "").replace(re, "")
-    setPost(response.data);
+describe("Product component", () => {
+  beforeEach(() => {
+    axios.get.mockReset();
   });
 
-  axios.get(baseURL1.replace("<id>", receipt_id)).then((response) => {
-    setPost1(response.data);
+  test("renders null when post is null", () => {
+    const tree = create(
+      <MemoryRouter>
+        <Product />
+      </MemoryRouter>
+    );
+    expect(tree).toBeNull();
   });
-}, []);
-React.useEffect(() => {
-  if (post)
-  {
-    post.summary = post.summary.replace("<b>", "").replace("</b>", "")
-    
-  }
-}, [post])
 
-if (!post) return null;
-if (!post1) return null;
+  test("renders null when post1 is null", () => {
+    axios.get.mockResolvedValueOnce({ data: { title: "Test Title" } });
 
+    const tree = create(
+      <MemoryRouter>
+        <Product />
+      </MemoryRouter>
+    );
+    expect(tree).toBeNull();
+  });
 
+  test("renders the product details when post and post1 are available", async () => {
+    const mockPost = {
+      title: "Test Title",
+      summary: "Test Summary",
+      image: "test-image.jpg",
+    };
+    const mockPost1 = {
+      ingredients: [
+        { name: "Ingredient 1" },
+        { name: "Ingredient 2" },
+        { name: "Ingredient 3" },
+      ],
+    };
 
+    axios.get.mockResolvedValueOnce({ data: mockPost });
+    axios.get.mockResolvedValueOnce({ data: mockPost1 });
 
-const mock = new MockAdapter(axios);
+    let tree;
+    await act(async () => {
+      tree = create(
+        <MemoryRouter>
+          <Product />
+        </MemoryRouter>
+      );
+      await Promise.resolve();
+    });
 
-test("renders product name", async () => {
-  const fakePost = {
-    title: post,
-    summary: "This is a fake product",
-    image: "fake-image-url",
-  };
+    const heroSection = tree.root.findByProps({ className: "heroSection" });
+    expect(heroSection).toBeDefined();
 
-  const fakePost1 = {
-    ingredients: [
-      { name: "Ingredient 1" },
-      { name: "Ingredient 2" },
-      // Add more fake ingredients if needed
-    ],
-  };
+    const productName = tree.root.findByProps({ className: "productName" });
+    expect(productName.children).toEqual([mockPost.title]);
 
-  mock
-    .onGet(/information/)
-    .reply(200, fakePost)
-    .onGet(/priceBreakdownWidget/)
-    .reply(200, fakePost1);
+    const productTextBig = tree.root.findByProps({ className: "productTextBig" });
+    expect(productTextBig.children).toEqual([mockPost.summary]);
 
-  render(<Product />);
+    const heroImg = tree.root.findByProps({ className: "heroImg" });
+    expect(heroImg.props.src).toEqual(mockPost.image);
 
-  await waitFor(() => {
-    const productName = screen.getByText("Fake Product");
-    expect(productName).toBeInTheDocument();
+    const productTextSmall = tree.root.findByProps({ className: "productTextSmall" });
+    expect(productTextSmall.children).toEqual([mockPost.summary]);
+
+    const featuresList = tree.root.findByProps({ className: "featuresList" });
+    expect(featuresList.findAllByType("li")).toHaveLength(mockPost1.ingredients.length);
+
+    const logoImg = tree.root.findByProps({ className: "logoImg" });
+    expect(logoImg.props.src).toEqual("images/logo.jpg");
   });
 });
-}

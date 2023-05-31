@@ -3,7 +3,7 @@ import { render, screen } from '@testing-library/react';
 import Contact from './Footer';
 
 describe('Contact component', () => {
-    it('renders contact form and maps', () => {
+    test('renders contact form and maps', () => {
         render(<Contact />);
 
         // Check if the contact form elements are rendered

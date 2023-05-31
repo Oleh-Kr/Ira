@@ -5,7 +5,7 @@ import Navbar from './Navbar';
 import {render} from "@testing-library/react"
 
 describe('Navbar component', () => {
-    it('renders correctly', () => {
+    test('renders correctly', () => {
         const component = renderer.create(
             <MemoryRouter>
                 <Navbar />
@@ -15,7 +15,7 @@ describe('Navbar component', () => {
         expect(tree).toMatchSnapshot();
     });
 
-    it('changes state when clicked', () => {
+    test('changes state when clicked', () => {
         const component = renderer.create(
             <MemoryRouter>
                 <Navbar />

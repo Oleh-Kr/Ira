@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Catalog Component renders correctly when API call is successful 1`] = `null`;

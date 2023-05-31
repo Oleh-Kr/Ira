@@ -4,7 +4,7 @@ import Order from './Order';
 import renderer from "react-test-renderer"
 
 describe('Order', () => {
-    it('renders the order form', () => {
+    test('renders the order form', () => {
         const component = render(<Order />);
 
         // Assert that the form elements are rendered
@@ -15,7 +15,7 @@ describe('Order', () => {
         expect(component.getByRole('button', { name: 'Order' })).toBeInTheDocument();
     });
 
-    it('submits the order form', () => {
+    test('submits the order form', () => {
         const component = render(<Order />);
 
         // Simulate user input

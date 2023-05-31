@@ -4,7 +4,7 @@ import { MemoryRouter } from 'react-router-dom';
 import Home from './Home';
 
 describe('Home component', () => {
-    it('renders the hero section with the correct content', () => {
+    test('renders the hero section with the correct content', () => {
         const heroSection = render(
             <MemoryRouter>
                 <Home />
@@ -30,7 +30,7 @@ describe('Home component', () => {
         expect(instagramLink).toHaveAttribute('href', '/');
     });
 
-    it('renders the testimonials section with the correct content', () => {
+    test('renders the testimonials section with the correct content', () => {
         const heroSection = render(
             <MemoryRouter>
                 <Home />
