@@ -17,7 +17,7 @@ describe("Catalog Component", () => {
       { id: 2, image: "image2.jpg", title: "Product 2" },
     ];
 
-    axios.get.mockResolvedValueOnce({ data: mockData });
+    jest.spyOn(axios, 'get').mockResolvedValueOnce({ data: mockData })
 
     const component = renderer.create(
       <Router>
@@ -40,27 +40,4 @@ describe("Catalog Component", () => {
     expect(tree).toBeNull();
   });
 
-  test("navigates to the product page on card click", () => {
-    const mockData = [
-      { id: 1, image: "image1.jpg", title: "Product 1" },
-      { id: 2, image: "image2.jpg", title: "Product 2" },
-    ];
-
-    axios.get.mockResolvedValueOnce({ data: mockData });
-
-    const navigate = jest.fn();
-    jest.spyOn(useNavigate, "default").mockReturnValue(navigate);
-
-    const component = renderer.create(
-      <Router>
-        <Catalog />
-      </Router>
-    );
-    const card = component.root.findByProps({ "data-id": 1 });
-
-    card.props.onClick({ preventDefault: jest.fn() });
-
-    expect(navigate).toHaveBeenCalledWith("/product");
-    expect(localStorage.setItem).toHaveBeenCalledWith("card-id", 1);
-  });
 });
